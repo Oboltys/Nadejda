@@ -1,0 +1,770 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModelFragment xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication
+    Name="LightSwitchServiceApplication"
+    Version="1.0.0.0">
+    <ServiceApplication.Attributes>
+      <ModuleNamespace
+        Namespace="LightSwitchApplication" />
+    </ServiceApplication.Attributes>
+  </ServiceApplication>
+  <DataService
+    DataProvider="EntityFrameworkDataProvider"
+    EntityContainer="LightSwitchCommonModule:NadejdaAzureData"
+    Name="NadejdaAzureDataDataService">
+    <DataService.ConnectionProperties>
+      <ConnectionProperty
+        Name="DataProviderName"
+        Value="91510608-8809-4020-8897-fba057e22d54" />
+      <ConnectionProperty
+        Name="DataSourceName"
+        Value="067ea0d9-ba62-43f7-9106-34930c60c528" />
+      <ConnectionProperty
+        Name="ProviderInvariantName"
+        Value="System.Data.SqlClient" />
+      <ConnectionProperty
+        Name="SafeConnectionString"
+        Value="Data Source=kh27m74zph.database.windows.net;Initial Catalog=NadejdaAzure;Persist Security Info=True;User ID=Oboltys" />
+      <ConnectionProperty
+        Name="ConnectionStringGuid"
+        Value="da94211f-9cf7-4a8b-a5b0-f3ec709fdc7e" />
+      <ConnectionProperty
+        Name="ProviderManifestToken"
+        Value="2008" />
+    </DataService.ConnectionProperties>
+    <EntitySetMapping
+      EntitySet="Адрес">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="Адрес" />
+        <SsdlProperty
+          Name="Номер_Адрес"
+          Nullable="False"
+          Property="LightSwitchCommonModule:АдресItem/Properties[Номер_Адрес]"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Адрес"
+          Nullable="True"
+          Property="LightSwitchCommonModule:АдресItem/Properties[Адрес]"
+          Type="nvarchar" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="Документы_ребенка">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="Документы_ребенка" />
+        <SsdlProperty
+          Name="Личный_номер"
+          Nullable="False"
+          Property="LightSwitchCommonModule:Документы_ребенкаItem/Properties[Личный_номер]"
+          Type="int" />
+        <SsdlProperty
+          Name="Данные_свидетельства_о_рождении_номер"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Документы_ребенкаItem/Properties[Данные_свидетельства_о_рождении_номер]"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Данные_свидетельства_о_рождении_серия"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Документы_ребенкаItem/Properties[Данные_свидетельства_о_рождении_серия]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Данные_свидетельства_о_рождении_-серия"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Документы_ребенкаItem/Properties[Данные_свидетельства_о_рождении__серия]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="Данные_свидетельства_о_рождении_дата_выдачи"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Документы_ребенкаItem/Properties[Данные_свидетельства_о_рождении_дата_выдачи]"
+          Type="datetime" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Данные_свидетельства_о_рождении_кем_выдано"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Документы_ребенкаItem/Properties[Данные_свидетельства_о_рождении_кем_выдано]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="ИНН_номер"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Документы_ребенкаItem/Properties[ИНН_номер]"
+          Type="int" />
+        <SsdlProperty
+          Name="ИНН_дата"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Документы_ребенкаItem/Properties[ИНН_дата]"
+          Type="datetime" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="Жилье_ребенка">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="Жилье_ребенка" />
+        <SsdlProperty
+          Name="Личный_номер"
+          Nullable="False"
+          Property="LightSwitchCommonModule:Жилье_ребенкаItem/Properties[Личный_номер]"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Договор"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Жилье_ребенкаItem/Properties[Договор]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="Дата_договора"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Жилье_ребенкаItem/Properties[Дата_договора]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="Серия_договора"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Жилье_ребенкаItem/Properties[Серия_договора]"
+          Type="int" />
+        <SsdlProperty
+          Name="Номер_договора"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Жилье_ребенкаItem/Properties[Номер_договора]"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="Закрепленное_жилье">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="Закрепленное_жилье" />
+        <SsdlProperty
+          Name="Личный номер"
+          Nullable="False"
+          Property="LightSwitchCommonModule:Закрепленное_жильеItem/Properties[Личный_номер]"
+          Type="int" />
+        <SsdlProperty
+          Name="№_распоряжения_о_закреплении"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Закрепленное_жильеItem/Properties[C_распоряжения_о_закреплении]"
+          Type="int" />
+        <SsdlProperty
+          Name="Дата_распоряжения_о_закреплении"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Закрепленное_жильеItem/Properties[Дата_распоряжения_о_закреплении]"
+          Type="datetime" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="Паспортные_данные">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="Паспортные_данные" />
+        <SsdlProperty
+          Name="Личный_Номер"
+          Nullable="False"
+          Property="LightSwitchCommonModule:Паспортные_данныеItem/Properties[Личный_Номер]"
+          Type="int" />
+        <SsdlProperty
+          Name="Данные_паспорта_серия"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Паспортные_данныеItem/Properties[Данные_паспорта_серия]"
+          Type="int" />
+        <SsdlProperty
+          Name="Данные_паспорта_номер"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Паспортные_данныеItem/Properties[Данные_паспорта_номер]"
+          Type="int" />
+        <SsdlProperty
+          Name="Данные_паспорта_дата_выдачи"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Паспортные_данныеItem/Properties[Данные_паспорта_дата_выдачи]"
+          Type="datetime" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Данные_паспорта_кем_выдан"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Паспортные_данныеItem/Properties[Данные_паспорта_кем_выдан]"
+          Type="nvarchar" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="Пенсия">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="Пенсия" />
+        <SsdlProperty
+          Name="Личный_номер"
+          Nullable="False"
+          Property="LightSwitchCommonModule:ПенсияItem/Properties[Личный_номер]"
+          Type="int" />
+        <SsdlProperty
+          Name="№_пенсионного_дела"
+          Nullable="True"
+          Property="LightSwitchCommonModule:ПенсияItem/Properties[C_пенсионного_дела]"
+          Type="int" />
+        <SsdlProperty
+          Name="Дата_оформления"
+          Nullable="True"
+          Property="LightSwitchCommonModule:ПенсияItem/Properties[Дата_оформления]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="Пенсионное_страховое_свидетельство_номер"
+          Nullable="True"
+          Property="LightSwitchCommonModule:ПенсияItem/Properties[Пенсионное_страховое_свидетельство_номер]"
+          Type="int" />
+        <SsdlProperty
+          Name="Пенсионное_страховое_свидетельство_дата"
+          Nullable="True"
+          Property="LightSwitchCommonModule:ПенсияItem/Properties[Пенсионное_страховое_свидетельство_дата]"
+          Type="datetime" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="Персональные_данные">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="Персональные_данные" />
+        <SsdlProperty
+          Name="Личный_номер"
+          Nullable="False"
+          Property="LightSwitchCommonModule:Персональные_данныеItem/Properties[Личный_номер]"
+          Type="int" />
+        <SsdlProperty
+          Name="Фото"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Персональные_данныеItem/Properties[Фото]"
+          Type="image" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Фамилия"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Персональные_данныеItem/Properties[Фамилия]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Имя"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Персональные_данныеItem/Properties[Имя]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Отчество"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Персональные_данныеItem/Properties[Отчество]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="Дата_рождения"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Персональные_данныеItem/Properties[Дата_рождения]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="Дата_выбытия"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Персональные_данныеItem/Properties[Дата_выбытия]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="Полных лет"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Персональные_данныеItem/Properties[Полных_лет]"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Адрес"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Персональные_данныеItem/Properties[Адрес]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="25"
+          Name="Гражданство"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Персональные_данныеItem/Properties[Гражданство]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="Дата_поступления"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Персональные_данныеItem/Properties[Дата_поступления]"
+          Type="datetime" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="Поступление_в_приют">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="Поступление_в_приют" />
+        <SsdlProperty
+          Name="Личный_номер"
+          Nullable="False"
+          Property="LightSwitchCommonModule:Поступление_в_приютItem/Properties[Личный_номер]"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Обстоятельства_обусл_поступление"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Поступление_в_приютItem/Properties[Обстоятельства_обусл_поступление]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="Распоряж_адм_номер"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Поступление_в_приютItem/Properties[Распоряж_адм_номер]"
+          Type="int" />
+        <SsdlProperty
+          Name="Распоряж_адм_дата"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Поступление_в_приютItem/Properties[Распоряж_адм_дата]"
+          Type="datetime" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="Регистрация_ребенка">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="Регистрация_ребенка" />
+        <SsdlProperty
+          Name="Личный_номер"
+          Nullable="False"
+          Property="LightSwitchCommonModule:Регистрация_ребенкаItem/Properties[Личный_номер]"
+          Type="int" />
+        <SsdlProperty
+          Name="Дата_регистрации_по_месту_жительсва"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Регистрация_ребенкаItem/Properties[Дата_регистрации_по_месту_жительсва]"
+          Type="datetime" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Адрес_регистрации_по_месту_пребывания"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Регистрация_ребенкаItem/Properties[Адрес_регистрации_по_месту_пребывания]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="Сроки_регистрации_по_месту_пребывания_с"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Регистрация_ребенкаItem/Properties[Сроки_регистрации_по_месту_пребывания_с]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="Сроки_регистрации_по_месту_пребывания_по"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Регистрация_ребенкаItem/Properties[Сроки_регистрации_по_месту_пребывания_по]"
+          Type="datetime" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="Решение_Суда">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="Решение_Суда" />
+        <SsdlProperty
+          Name="№дела"
+          Nullable="False"
+          Property="LightSwitchCommonModule:Решение_СудаItem/Properties[Cдела]"
+          Type="int" />
+        <SsdlProperty
+          Name="Дата_решения_суда"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Решение_СудаItem/Properties[Дата_решения_суда]"
+          Type="datetime" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Постановление"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Решение_СудаItem/Properties[Постановление]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="Дата_постановления"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Решение_СудаItem/Properties[Дата_постановления]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="Номер_постановления"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Решение_СудаItem/Properties[Номер_постановления]"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="Родители">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="Родители" />
+        <SsdlProperty
+          Name="Личный_номер"
+          Nullable="False"
+          Property="LightSwitchCommonModule:РодителиItem/Properties[Личный_номер]"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="ФИО"
+          Nullable="True"
+          Property="LightSwitchCommonModule:РодителиItem/Properties[ФИО]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Пол"
+          Nullable="True"
+          Property="LightSwitchCommonModule:РодителиItem/Properties[Пол]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="Дата_рождения"
+          Nullable="True"
+          Property="LightSwitchCommonModule:РодителиItem/Properties[Дата_рождения]"
+          Type="datetime" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Жив/мертв"
+          Nullable="True"
+          Property="LightSwitchCommonModule:РодителиItem/Properties[Жив_мертв]"
+          Type="nvarchar" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Статус_отца"
+          Nullable="True"
+          Property="LightSwitchCommonModule:РодителиItem/Properties[Статус_отца]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="№дела"
+          Nullable="True"
+          Property="LightSwitchCommonModule:РодителиItem/Properties[Cдела]"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Алименты/100р"
+          Nullable="True"
+          Property="LightSwitchCommonModule:РодителиItem/Properties[Алименты_100р]"
+          Type="nvarchar" />
+        <SsdlForeignKeyProperty
+          Name="№Адрес"
+          Nullable="True"
+          PropertyName="CАдрес"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="Номерсв"
+          Nullable="True"
+          PropertyName="Номерсв"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="Свид_о_смерти">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="Свид_о_смерти" />
+        <SsdlProperty
+          Name="Номерсв"
+          Nullable="False"
+          Property="LightSwitchCommonModule:Свид_о_смертиItem/Properties[Номерсв]"
+          Type="int" />
+        <SsdlProperty
+          Name="Дата_смерти"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Свид_о_смертиItem/Properties[Дата_смерти]"
+          Type="datetime" />
+        <SsdlProperty
+          Name="Свид_о_смерти_дата_выдачи"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Свид_о_смертиItem/Properties[Свид_о_смерти_дата_выдачи]"
+          Type="datetime" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Св_о_смерти_выдано"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Свид_о_смертиItem/Properties[Св_о_смерти_выдано]"
+          Type="nvarchar" />
+        <SsdlProperty
+          Name="Серия"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Свид_о_смертиItem/Properties[Серия]"
+          Type="int" />
+        <SsdlProperty
+          Name="Номер"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Свид_о_смертиItem/Properties[Номер]"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="Тип_семьи">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="Тип_семьи" />
+        <SsdlProperty
+          Name="Личный_номер"
+          Nullable="False"
+          Property="LightSwitchCommonModule:Тип_семьиItem/Properties[Личный_номер]"
+          Type="int" />
+        <SsdlProperty
+          MaxLength="255"
+          Name="Статус_семьи"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Тип_семьиItem/Properties[Статус_семьи]"
+          Type="nvarchar" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="Улучшение_жилья">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="Улучшение_жилья" />
+        <SsdlProperty
+          Name="Личный_номер"
+          Nullable="False"
+          Property="LightSwitchCommonModule:Улучшение_жильяItem/Properties[Личный_номер]"
+          Type="int" />
+        <SsdlProperty
+          Name="№_льготной_очереди_по_улучшению_жилья"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Улучшение_жильяItem/Properties[C_льготной_очереди_по_улучшению_жилья]"
+          Type="int" />
+        <SsdlProperty
+          Name="Дата_постановки_на_очередь"
+          Nullable="True"
+          Property="LightSwitchCommonModule:Улучшение_жильяItem/Properties[Дата_постановки_на_очередь]"
+          Type="datetime" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="Документы_ребенка_FK00">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Документы_ребенка_FK00" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:NadejdaAzureData/Members[Документы_ребенка_FK00]/Members[Персональные_данные]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Личный_номер" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:NadejdaAzureData/Members[Документы_ребенка_FK00]/Members[Документы_ребенка]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Личный_номер" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="Жилье_ребенка_FK00">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Жилье_ребенка_FK00" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:NadejdaAzureData/Members[Жилье_ребенка_FK00]/Members[Персональные_данные]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Личный_номер" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:NadejdaAzureData/Members[Жилье_ребенка_FK00]/Members[Жилье_ребенка]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Личный_номер" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="Закрепленное_жилье_FK00">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Закрепленное_жилье_FK00" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:NadejdaAzureData/Members[Закрепленное_жилье_FK00]/Members[Персональные_данные]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Личный_номер" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:NadejdaAzureData/Members[Закрепленное_жилье_FK00]/Members[Закрепленное_жилье]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Личный номер" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="Паспортные_данные_FK00">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Паспортные_данные_FK00" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:NadejdaAzureData/Members[Паспортные_данные_FK00]/Members[Персональные_данные]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Личный_номер" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:NadejdaAzureData/Members[Паспортные_данные_FK00]/Members[Паспортные_данные]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Личный_Номер" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="Пенсия_FK00">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Пенсия_FK00" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:NadejdaAzureData/Members[Пенсия_FK00]/Members[Персональные_данные]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Личный_номер" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:NadejdaAzureData/Members[Пенсия_FK00]/Members[Пенсия]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Личный_номер" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="Поступление_в_приют_FK00">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Поступление_в_приют_FK00" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:NadejdaAzureData/Members[Поступление_в_приют_FK00]/Members[Персональные_данные]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Личный_номер" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:NadejdaAzureData/Members[Поступление_в_приют_FK00]/Members[Поступление_в_приют]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Личный_номер" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="Регистрация_ребенка_FK00">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Регистрация_ребенка_FK00" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:NadejdaAzureData/Members[Регистрация_ребенка_FK00]/Members[Персональные_данные]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Личный_номер" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:NadejdaAzureData/Members[Регистрация_ребенка_FK00]/Members[Регистрация_ребенка]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Личный_номер" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="Родители_FK00">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Родители_FK00" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:NadejdaAzureData/Members[Родители_FK00]/Members[Адрес]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Номер_Адрес" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:NadejdaAzureData/Members[Родители_FK00]/Members[Родители]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="№Адрес" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="Родители_FK01">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Родители_FK01" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:NadejdaAzureData/Members[Родители_FK01]/Members[Свид_о_смерти]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Номерсв" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:NadejdaAzureData/Members[Родители_FK01]/Members[Родители]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Номерсв" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="Тип_семьи_FK00">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Тип_семьи_FK00" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:NadejdaAzureData/Members[Тип_семьи_FK00]/Members[Персональные_данные]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Личный_номер" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:NadejdaAzureData/Members[Тип_семьи_FK00]/Members[Тип_семьи]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Личный_номер" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="Улучшение_жилья_FK00">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="Улучшение_жилья_FK00" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:NadejdaAzureData/Members[Улучшение_жилья_FK00]/Members[Персональные_данные]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Личный_номер" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:NadejdaAzureData/Members[Улучшение_жилья_FK00]/Members[Улучшение_жилья]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Личный_номер" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+</ModelFragment>

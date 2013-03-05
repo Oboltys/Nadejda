@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Documents>
+    <Document FullPath="E:\Github\Nadejda\Nadejda\Common\Properties\Common.lsml" Checksum="87F80A3AED6A31DA54C581FECEC775B5CE66D933B44699AB96CE8CA80F2B3AFF" />
+    <Document FullPath="E:\Github\Nadejda\Nadejda\Server\Properties\Service.lsml" Checksum="1691847A529F3FFD72A1FE3495F5728720BFBC97B154187FA9C579A46E348487" />
+  </Documents>
+</ModelDocumentManifest>

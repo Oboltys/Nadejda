@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="NadejdaAzureDataStore" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="NadejdaAzureDataStore">
+    <EntitySet Name="Адрес" EntityType="NadejdaAzureDataStore.АдресItem" store:Type="Tables" Schema="dbo" Table="Адрес" />
+    <EntitySet Name="Документы_ребенка" EntityType="NadejdaAzureDataStore.Документы_ребенкаItem" store:Type="Tables" Schema="dbo" Table="Документы_ребенка" />
+    <EntitySet Name="Жилье_ребенка" EntityType="NadejdaAzureDataStore.Жилье_ребенкаItem" store:Type="Tables" Schema="dbo" Table="Жилье_ребенка" />
+    <EntitySet Name="Закрепленное_жилье" EntityType="NadejdaAzureDataStore.Закрепленное_жильеItem" store:Type="Tables" Schema="dbo" Table="Закрепленное_жилье" />
+    <EntitySet Name="Паспортные_данные" EntityType="NadejdaAzureDataStore.Паспортные_данныеItem" store:Type="Tables" Schema="dbo" Table="Паспортные_данные" />
+    <EntitySet Name="Пенсия" EntityType="NadejdaAzureDataStore.ПенсияItem" store:Type="Tables" Schema="dbo" Table="Пенсия" />
+    <EntitySet Name="Персональные_данные" EntityType="NadejdaAzureDataStore.Персональные_данныеItem" store:Type="Tables" Schema="dbo" Table="Персональные_данные" />
+    <EntitySet Name="Поступление_в_приют" EntityType="NadejdaAzureDataStore.Поступление_в_приютItem" store:Type="Tables" Schema="dbo" Table="Поступление_в_приют" />
+    <EntitySet Name="Регистрация_ребенка" EntityType="NadejdaAzureDataStore.Регистрация_ребенкаItem" store:Type="Tables" Schema="dbo" Table="Регистрация_ребенка" />
+    <EntitySet Name="Решение_Суда" EntityType="NadejdaAzureDataStore.Решение_СудаItem" store:Type="Tables" Schema="dbo" Table="Решение_Суда" />
+    <EntitySet Name="Родители" EntityType="NadejdaAzureDataStore.РодителиItem" store:Type="Tables" Schema="dbo" Table="Родители" />
+    <EntitySet Name="Свид_о_смерти" EntityType="NadejdaAzureDataStore.Свид_о_смертиItem" store:Type="Tables" Schema="dbo" Table="Свид_о_смерти" />
+    <EntitySet Name="Тип_семьи" EntityType="NadejdaAzureDataStore.Тип_семьиItem" store:Type="Tables" Schema="dbo" Table="Тип_семьи" />
+    <EntitySet Name="Улучшение_жилья" EntityType="NadejdaAzureDataStore.Улучшение_жильяItem" store:Type="Tables" Schema="dbo" Table="Улучшение_жилья" />
+    <AssociationSet Name="Документы_ребенка_FK00" Association="NadejdaAzureDataStore.Документы_ребенка_FK00">
+      <End Role="Персональные_данные" EntitySet="Персональные_данные" />
+      <End Role="Документы_ребенка" EntitySet="Документы_ребенка" />
+    </AssociationSet>
+    <AssociationSet Name="Жилье_ребенка_FK00" Association="NadejdaAzureDataStore.Жилье_ребенка_FK00">
+      <End Role="Персональные_данные" EntitySet="Персональные_данные" />
+      <End Role="Жилье_ребенка" EntitySet="Жилье_ребенка" />
+    </AssociationSet>
+    <AssociationSet Name="Закрепленное_жилье_FK00" Association="NadejdaAzureDataStore.Закрепленное_жилье_FK00">
+      <End Role="Персональные_данные" EntitySet="Персональные_данные" />
+      <End Role="Закрепленное_жилье" EntitySet="Закрепленное_жилье" />
+    </AssociationSet>
+    <AssociationSet Name="Паспортные_данные_FK00" Association="NadejdaAzureDataStore.Паспортные_данные_FK00">
+      <End Role="Персональные_данные" EntitySet="Персональные_данные" />
+      <End Role="Паспортные_данные" EntitySet="Паспортные_данные" />
+    </AssociationSet>
+    <AssociationSet Name="Пенсия_FK00" Association="NadejdaAzureDataStore.Пенсия_FK00">
+      <End Role="Персональные_данные" EntitySet="Персональные_данные" />
+      <End Role="Пенсия" EntitySet="Пенсия" />
+    </AssociationSet>
+    <AssociationSet Name="Поступление_в_приют_FK00" Association="NadejdaAzureDataStore.Поступление_в_приют_FK00">
+      <End Role="Персональные_данные" EntitySet="Персональные_данные" />
+      <End Role="Поступление_в_приют" EntitySet="Поступление_в_приют" />
+    </AssociationSet>
+    <AssociationSet Name="Регистрация_ребенка_FK00" Association="NadejdaAzureDataStore.Регистрация_ребенка_FK00">
+      <End Role="Персональные_данные" EntitySet="Персональные_данные" />
+      <End Role="Регистрация_ребенка" EntitySet="Регистрация_ребенка" />
+    </AssociationSet>
+    <AssociationSet Name="Родители_FK00" Association="NadejdaAzureDataStore.Родители_FK00">
+      <End Role="Адрес" EntitySet="Адрес" />
+      <End Role="Родители" EntitySet="Родители" />
+    </AssociationSet>
+    <AssociationSet Name="Родители_FK01" Association="NadejdaAzureDataStore.Родители_FK01">
+      <End Role="Свид_о_смерти" EntitySet="Свид_о_смерти" />
+      <End Role="Родители" EntitySet="Родители" />
+    </AssociationSet>
+    <AssociationSet Name="Тип_семьи_FK00" Association="NadejdaAzureDataStore.Тип_семьи_FK00">
+      <End Role="Персональные_данные" EntitySet="Персональные_данные" />
+      <End Role="Тип_семьи" EntitySet="Тип_семьи" />
+    </AssociationSet>
+    <AssociationSet Name="Улучшение_жилья_FK00" Association="NadejdaAzureDataStore.Улучшение_жилья_FK00">
+      <End Role="Персональные_данные" EntitySet="Персональные_данные" />
+      <End Role="Улучшение_жилья" EntitySet="Улучшение_жилья" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="АдресItem">
+    <Key>
+      <PropertyRef Name="Номер_Адрес" />
+    </Key>
+    <Property Name="Номер_Адрес" Type="int" Nullable="false" />
+    <Property Name="Адрес" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Документы_ребенкаItem">
+    <Key>
+      <PropertyRef Name="Личный_номер" />
+    </Key>
+    <Property Name="Личный_номер" Type="int" Nullable="false" />
+    <Property Name="Данные_свидетельства_о_рождении_номер" Type="int" />
+    <Property Name="Данные_свидетельства_о_рождении_серия" Type="nvarchar" MaxLength="255" />
+    <Property Name="Данные_свидетельства_о_рождении_-серия" Type="nvarchar" MaxLength="255" />
+    <Property Name="Данные_свидетельства_о_рождении_дата_выдачи" Type="datetime" />
+    <Property Name="Данные_свидетельства_о_рождении_кем_выдано" Type="nvarchar" MaxLength="255" />
+    <Property Name="ИНН_номер" Type="int" />
+    <Property Name="ИНН_дата" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Жилье_ребенкаItem">
+    <Key>
+      <PropertyRef Name="Личный_номер" />
+    </Key>
+    <Property Name="Личный_номер" Type="int" Nullable="false" />
+    <Property Name="Договор" Type="nvarchar" MaxLength="255" />
+    <Property Name="Дата_договора" Type="datetime" />
+    <Property Name="Серия_договора" Type="int" />
+    <Property Name="Номер_договора" Type="int" />
+  </EntityType>
+  <EntityType Name="Закрепленное_жильеItem">
+    <Key>
+      <PropertyRef Name="Личный номер" />
+    </Key>
+    <Property Name="Личный номер" Type="int" Nullable="false" />
+    <Property Name="№_распоряжения_о_закреплении" Type="int" />
+    <Property Name="Дата_распоряжения_о_закреплении" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Паспортные_данныеItem">
+    <Key>
+      <PropertyRef Name="Личный_Номер" />
+    </Key>
+    <Property Name="Личный_Номер" Type="int" Nullable="false" />
+    <Property Name="Данные_паспорта_серия" Type="int" />
+    <Property Name="Данные_паспорта_номер" Type="int" />
+    <Property Name="Данные_паспорта_дата_выдачи" Type="datetime" />
+    <Property Name="Данные_паспорта_кем_выдан" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="ПенсияItem">
+    <Key>
+      <PropertyRef Name="Личный_номер" />
+    </Key>
+    <Property Name="Личный_номер" Type="int" Nullable="false" />
+    <Property Name="№_пенсионного_дела" Type="int" />
+    <Property Name="Дата_оформления" Type="datetime" />
+    <Property Name="Пенсионное_страховое_свидетельство_номер" Type="int" />
+    <Property Name="Пенсионное_страховое_свидетельство_дата" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Персональные_данныеItem">
+    <Key>
+      <PropertyRef Name="Личный_номер" />
+    </Key>
+    <Property Name="Личный_номер" Type="int" Nullable="false" />
+    <Property Name="Фото" Type="image" />
+    <Property Name="Фамилия" Type="nvarchar" MaxLength="255" />
+    <Property Name="Имя" Type="nvarchar" MaxLength="255" />
+    <Property Name="Отчество" Type="nvarchar" MaxLength="255" />
+    <Property Name="Дата_рождения" Type="datetime" />
+    <Property Name="Дата_выбытия" Type="datetime" />
+    <Property Name="Полных лет" Type="int" />
+    <Property Name="Адрес" Type="nvarchar" MaxLength="255" />
+    <Property Name="Гражданство" Type="nvarchar" MaxLength="25" />
+    <Property Name="Дата_поступления" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Поступление_в_приютItem">
+    <Key>
+      <PropertyRef Name="Личный_номер" />
+    </Key>
+    <Property Name="Личный_номер" Type="int" Nullable="false" />
+    <Property Name="Обстоятельства_обусл_поступление" Type="nvarchar" MaxLength="255" />
+    <Property Name="Распоряж_адм_номер" Type="int" />
+    <Property Name="Распоряж_адм_дата" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Регистрация_ребенкаItem">
+    <Key>
+      <PropertyRef Name="Личный_номер" />
+    </Key>
+    <Property Name="Личный_номер" Type="int" Nullable="false" />
+    <Property Name="Дата_регистрации_по_месту_жительсва" Type="datetime" />
+    <Property Name="Адрес_регистрации_по_месту_пребывания" Type="nvarchar" MaxLength="255" />
+    <Property Name="Сроки_регистрации_по_месту_пребывания_с" Type="datetime" />
+    <Property Name="Сроки_регистрации_по_месту_пребывания_по" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Решение_СудаItem">
+    <Key>
+      <PropertyRef Name="№дела" />
+    </Key>
+    <Property Name="№дела" Type="int" Nullable="false" />
+    <Property Name="Дата_решения_суда" Type="datetime" />
+    <Property Name="Постановление" Type="nvarchar" MaxLength="255" />
+    <Property Name="Дата_постановления" Type="datetime" />
+    <Property Name="Номер_постановления" Type="int" />
+  </EntityType>
+  <EntityType Name="РодителиItem">
+    <Key>
+      <PropertyRef Name="Личный_номер" />
+    </Key>
+    <Property Name="Личный_номер" Type="int" Nullable="false" />
+    <Property Name="ФИО" Type="nvarchar" MaxLength="255" />
+    <Property Name="Пол" Type="nvarchar" MaxLength="255" />
+    <Property Name="Дата_рождения" Type="datetime" />
+    <Property Name="Жив/мертв" Type="nvarchar" MaxLength="255" />
+    <Property Name="Статус_отца" Type="nvarchar" MaxLength="255" />
+    <Property Name="№дела" Type="int" />
+    <Property Name="Алименты/100р" Type="nvarchar" MaxLength="255" />
+    <Property Name="№Адрес" Type="int" />
+    <Property Name="Номерсв" Type="int" />
+  </EntityType>
+  <EntityType Name="Свид_о_смертиItem">
+    <Key>
+      <PropertyRef Name="Номерсв" />
+    </Key>
+    <Property Name="Номерсв" Type="int" Nullable="false" />
+    <Property Name="Дата_смерти" Type="datetime" />
+    <Property Name="Свид_о_смерти_дата_выдачи" Type="datetime" />
+    <Property Name="Св_о_смерти_выдано" Type="nvarchar" MaxLength="255" />
+    <Property Name="Серия" Type="int" />
+    <Property Name="Номер" Type="int" />
+  </EntityType>
+  <EntityType Name="Тип_семьиItem">
+    <Key>
+      <PropertyRef Name="Личный_номер" />
+    </Key>
+    <Property Name="Личный_номер" Type="int" Nullable="false" />
+    <Property Name="Статус_семьи" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Улучшение_жильяItem">
+    <Key>
+      <PropertyRef Name="Личный_номер" />
+    </Key>
+    <Property Name="Личный_номер" Type="int" Nullable="false" />
+    <Property Name="№_льготной_очереди_по_улучшению_жилья" Type="int" />
+    <Property Name="Дата_постановки_на_очередь" Type="datetime" />
+  </EntityType>
+  <Association Name="Документы_ребенка_FK00">
+    <End Role="Персональные_данные" Type="NadejdaAzureDataStore.Персональные_данныеItem" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Документы_ребенка" Type="NadejdaAzureDataStore.Документы_ребенкаItem" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Персональные_данные">
+        <PropertyRef Name="Личный_номер" />
+      </Principal>
+      <Dependent Role="Документы_ребенка">
+        <PropertyRef Name="Личный_номер" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Жилье_ребенка_FK00">
+    <End Role="Персональные_данные" Type="NadejdaAzureDataStore.Персональные_данныеItem" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Жилье_ребенка" Type="NadejdaAzureDataStore.Жилье_ребенкаItem" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Персональные_данные">
+        <PropertyRef Name="Личный_номер" />
+      </Principal>
+      <Dependent Role="Жилье_ребенка">
+        <PropertyRef Name="Личный_номер" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Закрепленное_жилье_FK00">
+    <End Role="Персональные_данные" Type="NadejdaAzureDataStore.Персональные_данныеItem" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Закрепленное_жилье" Type="NadejdaAzureDataStore.Закрепленное_жильеItem" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Персональные_данные">
+        <PropertyRef Name="Личный_номер" />
+      </Principal>
+      <Dependent Role="Закрепленное_жилье">
+        <PropertyRef Name="Личный номер" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Паспортные_данные_FK00">
+    <End Role="Персональные_данные" Type="NadejdaAzureDataStore.Персональные_данныеItem" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Паспортные_данные" Type="NadejdaAzureDataStore.Паспортные_данныеItem" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Персональные_данные">
+        <PropertyRef Name="Личный_номер" />
+      </Principal>
+      <Dependent Role="Паспортные_данные">
+        <PropertyRef Name="Личный_Номер" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Пенсия_FK00">
+    <End Role="Персональные_данные" Type="NadejdaAzureDataStore.Персональные_данныеItem" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Пенсия" Type="NadejdaAzureDataStore.ПенсияItem" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Персональные_данные">
+        <PropertyRef Name="Личный_номер" />
+      </Principal>
+      <Dependent Role="Пенсия">
+        <PropertyRef Name="Личный_номер" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Поступление_в_приют_FK00">
+    <End Role="Персональные_данные" Type="NadejdaAzureDataStore.Персональные_данныеItem" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Поступление_в_приют" Type="NadejdaAzureDataStore.Поступление_в_приютItem" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Персональные_данные">
+        <PropertyRef Name="Личный_номер" />
+      </Principal>
+      <Dependent Role="Поступление_в_приют">
+        <PropertyRef Name="Личный_номер" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Регистрация_ребенка_FK00">
+    <End Role="Персональные_данные" Type="NadejdaAzureDataStore.Персональные_данныеItem" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Регистрация_ребенка" Type="NadejdaAzureDataStore.Регистрация_ребенкаItem" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Персональные_данные">
+        <PropertyRef Name="Личный_номер" />
+      </Principal>
+      <Dependent Role="Регистрация_ребенка">
+        <PropertyRef Name="Личный_номер" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Родители_FK00">
+    <End Role="Адрес" Type="NadejdaAzureDataStore.АдресItem" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Родители" Type="NadejdaAzureDataStore.РодителиItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Адрес">
+        <PropertyRef Name="Номер_Адрес" />
+      </Principal>
+      <Dependent Role="Родители">
+        <PropertyRef Name="№Адрес" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Родители_FK01">
+    <End Role="Свид_о_смерти" Type="NadejdaAzureDataStore.Свид_о_смертиItem" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Родители" Type="NadejdaAzureDataStore.РодителиItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Свид_о_смерти">
+        <PropertyRef Name="Номерсв" />
+      </Principal>
+      <Dependent Role="Родители">
+        <PropertyRef Name="Номерсв" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Тип_семьи_FK00">
+    <End Role="Персональные_данные" Type="NadejdaAzureDataStore.Персональные_данныеItem" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Тип_семьи" Type="NadejdaAzureDataStore.Тип_семьиItem" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Персональные_данные">
+        <PropertyRef Name="Личный_номер" />
+      </Principal>
+      <Dependent Role="Тип_семьи">
+        <PropertyRef Name="Личный_номер" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Улучшение_жилья_FK00">
+    <End Role="Персональные_данные" Type="NadejdaAzureDataStore.Персональные_данныеItem" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Улучшение_жилья" Type="NadejdaAzureDataStore.Улучшение_жильяItem" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Персональные_данные">
+        <PropertyRef Name="Личный_номер" />
+      </Principal>
+      <Dependent Role="Улучшение_жилья">
+        <PropertyRef Name="Личный_номер" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

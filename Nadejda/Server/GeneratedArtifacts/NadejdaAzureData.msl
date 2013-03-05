@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping CdmEntityContainer="NadejdaAzureDataObjectContext" StorageEntityContainer="NadejdaAzureDataStore">
+    <EntitySetMapping Name="Адрес">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.АдресItem)">
+        <MappingFragment StoreEntitySet="Адрес">
+          <ScalarProperty Name="Номер_Адрес" ColumnName="Номер_Адрес" />
+          <ScalarProperty Name="Адрес" ColumnName="Адрес" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Документы_ребенка">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Документы_ребенкаItem)">
+        <MappingFragment StoreEntitySet="Документы_ребенка">
+          <ScalarProperty Name="Личный_номер" ColumnName="Личный_номер" />
+          <ScalarProperty Name="Данные_свидетельства_о_рождении_номер" ColumnName="Данные_свидетельства_о_рождении_номер" />
+          <ScalarProperty Name="Данные_свидетельства_о_рождении_серия" ColumnName="Данные_свидетельства_о_рождении_серия" />
+          <ScalarProperty Name="Данные_свидетельства_о_рождении__серия" ColumnName="Данные_свидетельства_о_рождении_-серия" />
+          <ScalarProperty Name="Данные_свидетельства_о_рождении_дата_выдачи" ColumnName="Данные_свидетельства_о_рождении_дата_выдачи" />
+          <ScalarProperty Name="Данные_свидетельства_о_рождении_кем_выдано" ColumnName="Данные_свидетельства_о_рождении_кем_выдано" />
+          <ScalarProperty Name="ИНН_номер" ColumnName="ИНН_номер" />
+          <ScalarProperty Name="ИНН_дата" ColumnName="ИНН_дата" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Жилье_ребенка">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Жилье_ребенкаItem)">
+        <MappingFragment StoreEntitySet="Жилье_ребенка">
+          <ScalarProperty Name="Личный_номер" ColumnName="Личный_номер" />
+          <ScalarProperty Name="Договор" ColumnName="Договор" />
+          <ScalarProperty Name="Дата_договора" ColumnName="Дата_договора" />
+          <ScalarProperty Name="Серия_договора" ColumnName="Серия_договора" />
+          <ScalarProperty Name="Номер_договора" ColumnName="Номер_договора" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Закрепленное_жилье">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Закрепленное_жильеItem)">
+        <MappingFragment StoreEntitySet="Закрепленное_жилье">
+          <ScalarProperty Name="Личный_номер" ColumnName="Личный номер" />
+          <ScalarProperty Name="C_распоряжения_о_закреплении" ColumnName="№_распоряжения_о_закреплении" />
+          <ScalarProperty Name="Дата_распоряжения_о_закреплении" ColumnName="Дата_распоряжения_о_закреплении" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Паспортные_данные">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Паспортные_данныеItem)">
+        <MappingFragment StoreEntitySet="Паспортные_данные">
+          <ScalarProperty Name="Личный_Номер" ColumnName="Личный_Номер" />
+          <ScalarProperty Name="Данные_паспорта_серия" ColumnName="Данные_паспорта_серия" />
+          <ScalarProperty Name="Данные_паспорта_номер" ColumnName="Данные_паспорта_номер" />
+          <ScalarProperty Name="Данные_паспорта_дата_выдачи" ColumnName="Данные_паспорта_дата_выдачи" />
+          <ScalarProperty Name="Данные_паспорта_кем_выдан" ColumnName="Данные_паспорта_кем_выдан" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Пенсия">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.ПенсияItem)">
+        <MappingFragment StoreEntitySet="Пенсия">
+          <ScalarProperty Name="Личный_номер" ColumnName="Личный_номер" />
+          <ScalarProperty Name="C_пенсионного_дела" ColumnName="№_пенсионного_дела" />
+          <ScalarProperty Name="Дата_оформления" ColumnName="Дата_оформления" />
+          <ScalarProperty Name="Пенсионное_страховое_свидетельство_номер" ColumnName="Пенсионное_страховое_свидетельство_номер" />
+          <ScalarProperty Name="Пенсионное_страховое_свидетельство_дата" ColumnName="Пенсионное_страховое_свидетельство_дата" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Персональные_данные">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Персональные_данныеItem)">
+        <MappingFragment StoreEntitySet="Персональные_данные">
+          <ScalarProperty Name="Личный_номер" ColumnName="Личный_номер" />
+          <ScalarProperty Name="Фото" ColumnName="Фото" />
+          <ScalarProperty Name="Фамилия" ColumnName="Фамилия" />
+          <ScalarProperty Name="Имя" ColumnName="Имя" />
+          <ScalarProperty Name="Отчество" ColumnName="Отчество" />
+          <ScalarProperty Name="Дата_рождения" ColumnName="Дата_рождения" />
+          <ScalarProperty Name="Дата_выбытия" ColumnName="Дата_выбытия" />
+          <ScalarProperty Name="Полных_лет" ColumnName="Полных лет" />
+          <ScalarProperty Name="Адрес" ColumnName="Адрес" />
+          <ScalarProperty Name="Гражданство" ColumnName="Гражданство" />
+          <ScalarProperty Name="Дата_поступления" ColumnName="Дата_поступления" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Поступление_в_приют">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Поступление_в_приютItem)">
+        <MappingFragment StoreEntitySet="Поступление_в_приют">
+          <ScalarProperty Name="Личный_номер" ColumnName="Личный_номер" />
+          <ScalarProperty Name="Обстоятельства_обусл_поступление" ColumnName="Обстоятельства_обусл_поступление" />
+          <ScalarProperty Name="Распоряж_адм_номер" ColumnName="Распоряж_адм_номер" />
+          <ScalarProperty Name="Распоряж_адм_дата" ColumnName="Распоряж_адм_дата" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Регистрация_ребенка">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Регистрация_ребенкаItem)">
+        <MappingFragment StoreEntitySet="Регистрация_ребенка">
+          <ScalarProperty Name="Личный_номер" ColumnName="Личный_номер" />
+          <ScalarProperty Name="Дата_регистрации_по_месту_жительсва" ColumnName="Дата_регистрации_по_месту_жительсва" />
+          <ScalarProperty Name="Адрес_регистрации_по_месту_пребывания" ColumnName="Адрес_регистрации_по_месту_пребывания" />
+          <ScalarProperty Name="Сроки_регистрации_по_месту_пребывания_с" ColumnName="Сроки_регистрации_по_месту_пребывания_с" />
+          <ScalarProperty Name="Сроки_регистрации_по_месту_пребывания_по" ColumnName="Сроки_регистрации_по_месту_пребывания_по" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Решение_Суда">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Решение_СудаItem)">
+        <MappingFragment StoreEntitySet="Решение_Суда">
+          <ScalarProperty Name="Cдела" ColumnName="№дела" />
+          <ScalarProperty Name="Дата_решения_суда" ColumnName="Дата_решения_суда" />
+          <ScalarProperty Name="Постановление" ColumnName="Постановление" />
+          <ScalarProperty Name="Дата_постановления" ColumnName="Дата_постановления" />
+          <ScalarProperty Name="Номер_постановления" ColumnName="Номер_постановления" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Родители">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.РодителиItem)">
+        <MappingFragment StoreEntitySet="Родители">
+          <ScalarProperty Name="Личный_номер" ColumnName="Личный_номер" />
+          <ScalarProperty Name="ФИО" ColumnName="ФИО" />
+          <ScalarProperty Name="Пол" ColumnName="Пол" />
+          <ScalarProperty Name="Дата_рождения" ColumnName="Дата_рождения" />
+          <ScalarProperty Name="Жив_мертв" ColumnName="Жив/мертв" />
+          <ScalarProperty Name="Статус_отца" ColumnName="Статус_отца" />
+          <ScalarProperty Name="Cдела" ColumnName="№дела" />
+          <ScalarProperty Name="Алименты_100р" ColumnName="Алименты/100р" />
+          <ScalarProperty Name="CАдрес" ColumnName="№Адрес" />
+          <ScalarProperty Name="Номерсв" ColumnName="Номерсв" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Свид_о_смерти">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Свид_о_смертиItem)">
+        <MappingFragment StoreEntitySet="Свид_о_смерти">
+          <ScalarProperty Name="Номерсв" ColumnName="Номерсв" />
+          <ScalarProperty Name="Дата_смерти" ColumnName="Дата_смерти" />
+          <ScalarProperty Name="Свид_о_смерти_дата_выдачи" ColumnName="Свид_о_смерти_дата_выдачи" />
+          <ScalarProperty Name="Св_о_смерти_выдано" ColumnName="Св_о_смерти_выдано" />
+          <ScalarProperty Name="Серия" ColumnName="Серия" />
+          <ScalarProperty Name="Номер" ColumnName="Номер" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Тип_семьи">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Тип_семьиItem)">
+        <MappingFragment StoreEntitySet="Тип_семьи">
+          <ScalarProperty Name="Личный_номер" ColumnName="Личный_номер" />
+          <ScalarProperty Name="Статус_семьи" ColumnName="Статус_семьи" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Улучшение_жилья">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Улучшение_жильяItem)">
+        <MappingFragment StoreEntitySet="Улучшение_жилья">
+          <ScalarProperty Name="Личный_номер" ColumnName="Личный_номер" />
+          <ScalarProperty Name="C_льготной_очереди_по_улучшению_жилья" ColumnName="№_льготной_очереди_по_улучшению_жилья" />
+          <ScalarProperty Name="Дата_постановки_на_очередь" ColumnName="Дата_постановки_на_очередь" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

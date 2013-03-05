@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" Namespace="LightSwitchApplication" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="АдресItem">
+    <Key>
+      <PropertyRef Name="Номер_Адрес" />
+    </Key>
+    <Property Name="Номер_Адрес" Type="Edm.Int32" Nullable="false" />
+    <Property Name="Адрес" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Родители" Relationship="LightSwitchApplication.Родители_FK00" ToRole="Родители" FromRole="Адрес" />
+  </EntityType>
+  <EntityType Name="Документы_ребенкаItem">
+    <Key>
+      <PropertyRef Name="Личный_номер" />
+    </Key>
+    <Property Name="Личный_номер" Type="Edm.Int32" Nullable="false" />
+    <Property Name="Данные_свидетельства_о_рождении_номер" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="Данные_свидетельства_о_рождении_серия" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="Данные_свидетельства_о_рождении__серия" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="Данные_свидетельства_о_рождении_дата_выдачи" Type="Edm.DateTime" Precision="3" ConcurrencyMode="Fixed" />
+    <Property Name="Данные_свидетельства_о_рождении_кем_выдано" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="ИНН_номер" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="ИНН_дата" Type="Edm.DateTime" Precision="3" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Персональные_данныеItem" Relationship="LightSwitchApplication.Документы_ребенка_FK00" ToRole="Персональные_данные" FromRole="Документы_ребенка" />
+  </EntityType>
+  <EntityType Name="Жилье_ребенкаItem">
+    <Key>
+      <PropertyRef Name="Личный_номер" />
+    </Key>
+    <Property Name="Личный_номер" Type="Edm.Int32" Nullable="false" />
+    <Property Name="Договор" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="Дата_договора" Type="Edm.DateTime" Precision="3" ConcurrencyMode="Fixed" />
+    <Property Name="Серия_договора" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="Номер_договора" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Персональные_данныеItem" Relationship="LightSwitchApplication.Жилье_ребенка_FK00" ToRole="Персональные_данные" FromRole="Жилье_ребенка" />
+  </EntityType>
+  <EntityType Name="Закрепленное_жильеItem">
+    <Key>
+      <PropertyRef Name="Личный_номер" />
+    </Key>
+    <Property Name="Личный_номер" Type="Edm.Int32" Nullable="false" />
+    <Property Name="C_распоряжения_о_закреплении" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="Дата_распоряжения_о_закреплении" Type="Edm.DateTime" Precision="3" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Персональные_данныеItem" Relationship="LightSwitchApplication.Закрепленное_жилье_FK00" ToRole="Персональные_данные" FromRole="Закрепленное_жилье" />
+  </EntityType>
+  <EntityType Name="Паспортные_данныеItem">
+    <Key>
+      <PropertyRef Name="Личный_Номер" />
+    </Key>
+    <Property Name="Личный_Номер" Type="Edm.Int32" Nullable="false" />
+    <Property Name="Данные_паспорта_серия" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="Данные_паспорта_номер" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="Данные_паспорта_дата_выдачи" Type="Edm.DateTime" Precision="3" ConcurrencyMode="Fixed" />
+    <Property Name="Данные_паспорта_кем_выдан" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Персональные_данныеItem" Relationship="LightSwitchApplication.Паспортные_данные_FK00" ToRole="Персональные_данные" FromRole="Паспортные_данные" />
+  </EntityType>
+  <EntityType Name="ПенсияItem">
+    <Key>
+      <PropertyRef Name="Личный_номер" />
+    </Key>
+    <Property Name="Личный_номер" Type="Edm.Int32" Nullable="false" />
+    <Property Name="C_пенсионного_дела" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="Дата_оформления" Type="Edm.DateTime" Precision="3" ConcurrencyMode="Fixed" />
+    <Property Name="Пенсионное_страховое_свидетельство_номер" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="Пенсионное_страховое_свидетельство_дата" Type="Edm.DateTime" Precision="3" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Персональные_данныеItem" Relationship="LightSwitchApplication.Пенсия_FK00" ToRole="Персональные_данные" FromRole="Пенсия" />
+  </EntityType>
+  <EntityType Name="Персональные_данныеItem">
+    <Key>
+      <PropertyRef Name="Личный_номер" />
+    </Key>
+    <Property Name="Личный_номер" Type="Edm.Int32" Nullable="false" />
+    <Property Name="Фото" Type="Edm.Binary" MaxLength="Max" />
+    <Property Name="Фамилия" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="Имя" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="Отчество" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="Дата_рождения" Type="Edm.DateTime" Precision="3" ConcurrencyMode="Fixed" />
+    <Property Name="Дата_выбытия" Type="Edm.DateTime" Precision="3" ConcurrencyMode="Fixed" />
+    <Property Name="Полных_лет" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="Адрес" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="Гражданство" Type="Edm.String" MaxLength="25" ConcurrencyMode="Fixed" />
+    <Property Name="Дата_поступления" Type="Edm.DateTime" Precision="3" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Документы_ребенкаItem" Relationship="LightSwitchApplication.Документы_ребенка_FK00" ToRole="Документы_ребенка" FromRole="Персональные_данные" />
+    <NavigationProperty Name="Жилье_ребенкаItem" Relationship="LightSwitchApplication.Жилье_ребенка_FK00" ToRole="Жилье_ребенка" FromRole="Персональные_данные" />
+    <NavigationProperty Name="Закрепленное_жильеItem" Relationship="LightSwitchApplication.Закрепленное_жилье_FK00" ToRole="Закрепленное_жилье" FromRole="Персональные_данные" />
+    <NavigationProperty Name="Паспортные_данныеItem" Relationship="LightSwitchApplication.Паспортные_данные_FK00" ToRole="Паспортные_данные" FromRole="Персональные_данные" />
+    <NavigationProperty Name="ПенсияItem" Relationship="LightSwitchApplication.Пенсия_FK00" ToRole="Пенсия" FromRole="Персональные_данные" />
+    <NavigationProperty Name="Поступление_в_приютItem" Relationship="LightSwitchApplication.Поступление_в_приют_FK00" ToRole="Поступление_в_приют" FromRole="Персональные_данные" />
+    <NavigationProperty Name="Регистрация_ребенкаItem" Relationship="LightSwitchApplication.Регистрация_ребенка_FK00" ToRole="Регистрация_ребенка" FromRole="Персональные_данные" />
+    <NavigationProperty Name="Тип_семьиItem" Relationship="LightSwitchApplication.Тип_семьи_FK00" ToRole="Тип_семьи" FromRole="Персональные_данные" />
+    <NavigationProperty Name="Улучшение_жильяItem" Relationship="LightSwitchApplication.Улучшение_жилья_FK00" ToRole="Улучшение_жилья" FromRole="Персональные_данные" />
+  </EntityType>
+  <EntityType Name="Поступление_в_приютItem">
+    <Key>
+      <PropertyRef Name="Личный_номер" />
+    </Key>
+    <Property Name="Личный_номер" Type="Edm.Int32" Nullable="false" />
+    <Property Name="Обстоятельства_обусл_поступление" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="Распоряж_адм_номер" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="Распоряж_адм_дата" Type="Edm.DateTime" Precision="3" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Персональные_данныеItem" Relationship="LightSwitchApplication.Поступление_в_приют_FK00" ToRole="Персональные_данные" FromRole="Поступление_в_приют" />
+  </EntityType>
+  <EntityType Name="Регистрация_ребенкаItem">
+    <Key>
+      <PropertyRef Name="Личный_номер" />
+    </Key>
+    <Property Name="Личный_номер" Type="Edm.Int32" Nullable="false" />
+    <Property Name="Дата_регистрации_по_месту_жительсва" Type="Edm.DateTime" Precision="3" ConcurrencyMode="Fixed" />
+    <Property Name="Адрес_регистрации_по_месту_пребывания" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="Сроки_регистрации_по_месту_пребывания_с" Type="Edm.DateTime" Precision="3" ConcurrencyMode="Fixed" />
+    <Property Name="Сроки_регистрации_по_месту_пребывания_по" Type="Edm.DateTime" Precision="3" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Персональные_данныеItem" Relationship="LightSwitchApplication.Регистрация_ребенка_FK00" ToRole="Персональные_данные" FromRole="Регистрация_ребенка" />
+  </EntityType>
+  <EntityType Name="Решение_СудаItem">
+    <Key>
+      <PropertyRef Name="Cдела" />
+    </Key>
+    <Property Name="Cдела" Type="Edm.Int32" Nullable="false" />
+    <Property Name="Дата_решения_суда" Type="Edm.DateTime" Precision="3" ConcurrencyMode="Fixed" />
+    <Property Name="Постановление" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="Дата_постановления" Type="Edm.DateTime" Precision="3" ConcurrencyMode="Fixed" />
+    <Property Name="Номер_постановления" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+  </EntityType>
+  <EntityType Name="РодителиItem">
+    <Key>
+      <PropertyRef Name="Личный_номер" />
+    </Key>
+    <Property Name="Личный_номер" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ФИО" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="Пол" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="Дата_рождения" Type="Edm.DateTime" Precision="3" ConcurrencyMode="Fixed" />
+    <Property Name="Жив_мертв" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="Статус_отца" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="Cдела" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="Алименты_100р" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="CАдрес" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="Номерсв" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="АдресItem" Relationship="LightSwitchApplication.Родители_FK00" ToRole="Адрес" FromRole="Родители" />
+    <NavigationProperty Name="Свид_о_смертиItem" Relationship="LightSwitchApplication.Родители_FK01" ToRole="Свид_о_смерти" FromRole="Родители" />
+  </EntityType>
+  <EntityType Name="Свид_о_смертиItem">
+    <Key>
+      <PropertyRef Name="Номерсв" />
+    </Key>
+    <Property Name="Номерсв" Type="Edm.Int32" Nullable="false" />
+    <Property Name="Дата_смерти" Type="Edm.DateTime" Precision="3" ConcurrencyMode="Fixed" />
+    <Property Name="Свид_о_смерти_дата_выдачи" Type="Edm.DateTime" Precision="3" ConcurrencyMode="Fixed" />
+    <Property Name="Св_о_смерти_выдано" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <Property Name="Серия" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="Номер" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Родители" Relationship="LightSwitchApplication.Родители_FK01" ToRole="Родители" FromRole="Свид_о_смерти" />
+  </EntityType>
+  <EntityType Name="Тип_семьиItem">
+    <Key>
+      <PropertyRef Name="Личный_номер" />
+    </Key>
+    <Property Name="Личный_номер" Type="Edm.Int32" Nullable="false" />
+    <Property Name="Статус_семьи" Type="Edm.String" MaxLength="255" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Персональные_данныеItem" Relationship="LightSwitchApplication.Тип_семьи_FK00" ToRole="Персональные_данные" FromRole="Тип_семьи" />
+  </EntityType>
+  <EntityType Name="Улучшение_жильяItem">
+    <Key>
+      <PropertyRef Name="Личный_номер" />
+    </Key>
+    <Property Name="Личный_номер" Type="Edm.Int32" Nullable="false" />
+    <Property Name="C_льготной_очереди_по_улучшению_жилья" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="Дата_постановки_на_очередь" Type="Edm.DateTime" Precision="3" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="Персональные_данныеItem" Relationship="LightSwitchApplication.Улучшение_жилья_FK00" ToRole="Персональные_данные" FromRole="Улучшение_жилья" />
+  </EntityType>
+  <Association Name="Документы_ребенка_FK00">
+    <End Role="Персональные_данные" Type="LightSwitchApplication.Персональные_данныеItem" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Документы_ребенка" Type="LightSwitchApplication.Документы_ребенкаItem" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Персональные_данные">
+        <PropertyRef Name="Личный_номер" />
+      </Principal>
+      <Dependent Role="Документы_ребенка">
+        <PropertyRef Name="Личный_номер" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Жилье_ребенка_FK00">
+    <End Role="Персональные_данные" Type="LightSwitchApplication.Персональные_данныеItem" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Жилье_ребенка" Type="LightSwitchApplication.Жилье_ребенкаItem" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Персональные_данные">
+        <PropertyRef Name="Личный_номер" />
+      </Principal>
+      <Dependent Role="Жилье_ребенка">
+        <PropertyRef Name="Личный_номер" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Закрепленное_жилье_FK00">
+    <End Role="Персональные_данные" Type="LightSwitchApplication.Персональные_данныеItem" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Закрепленное_жилье" Type="LightSwitchApplication.Закрепленное_жильеItem" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Персональные_данные">
+        <PropertyRef Name="Личный_номер" />
+      </Principal>
+      <Dependent Role="Закрепленное_жилье">
+        <PropertyRef Name="Личный_номер" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Паспортные_данные_FK00">
+    <End Role="Персональные_данные" Type="LightSwitchApplication.Персональные_данныеItem" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Паспортные_данные" Type="LightSwitchApplication.Паспортные_данныеItem" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Персональные_данные">
+        <PropertyRef Name="Личный_номер" />
+      </Principal>
+      <Dependent Role="Паспортные_данные">
+        <PropertyRef Name="Личный_Номер" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Пенсия_FK00">
+    <End Role="Персональные_данные" Type="LightSwitchApplication.Персональные_данныеItem" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Пенсия" Type="LightSwitchApplication.ПенсияItem" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Персональные_данные">
+        <PropertyRef Name="Личный_номер" />
+      </Principal>
+      <Dependent Role="Пенсия">
+        <PropertyRef Name="Личный_номер" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Поступление_в_приют_FK00">
+    <End Role="Персональные_данные" Type="LightSwitchApplication.Персональные_данныеItem" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Поступление_в_приют" Type="LightSwitchApplication.Поступление_в_приютItem" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Персональные_данные">
+        <PropertyRef Name="Личный_номер" />
+      </Principal>
+      <Dependent Role="Поступление_в_приют">
+        <PropertyRef Name="Личный_номер" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Регистрация_ребенка_FK00">
+    <End Role="Персональные_данные" Type="LightSwitchApplication.Персональные_данныеItem" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Регистрация_ребенка" Type="LightSwitchApplication.Регистрация_ребенкаItem" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Персональные_данные">
+        <PropertyRef Name="Личный_номер" />
+      </Principal>
+      <Dependent Role="Регистрация_ребенка">
+        <PropertyRef Name="Личный_номер" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Родители_FK00">
+    <End Role="Адрес" Type="LightSwitchApplication.АдресItem" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Родители" Type="LightSwitchApplication.РодителиItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Адрес">
+        <PropertyRef Name="Номер_Адрес" />
+      </Principal>
+      <Dependent Role="Родители">
+        <PropertyRef Name="CАдрес" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Родители_FK01">
+    <End Role="Свид_о_смерти" Type="LightSwitchApplication.Свид_о_смертиItem" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Родители" Type="LightSwitchApplication.РодителиItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Свид_о_смерти">
+        <PropertyRef Name="Номерсв" />
+      </Principal>
+      <Dependent Role="Родители">
+        <PropertyRef Name="Номерсв" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Тип_семьи_FK00">
+    <End Role="Персональные_данные" Type="LightSwitchApplication.Персональные_данныеItem" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Тип_семьи" Type="LightSwitchApplication.Тип_семьиItem" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Персональные_данные">
+        <PropertyRef Name="Личный_номер" />
+      </Principal>
+      <Dependent Role="Тип_семьи">
+        <PropertyRef Name="Личный_номер" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Улучшение_жилья_FK00">
+    <End Role="Персональные_данные" Type="LightSwitchApplication.Персональные_данныеItem" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Улучшение_жилья" Type="LightSwitchApplication.Улучшение_жильяItem" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Персональные_данные">
+        <PropertyRef Name="Личный_номер" />
+      </Principal>
+      <Dependent Role="Улучшение_жилья">
+        <PropertyRef Name="Личный_номер" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NadejdaAzureDataObjectContext" m:IsDefaultEntityContainer="true">
+    <EntitySet Name="Адрес" EntityType="LightSwitchApplication.АдресItem" />
+    <EntitySet Name="Документы_ребенка" EntityType="LightSwitchApplication.Документы_ребенкаItem" />
+    <EntitySet Name="Жилье_ребенка" EntityType="LightSwitchApplication.Жилье_ребенкаItem" />
+    <EntitySet Name="Закрепленное_жилье" EntityType="LightSwitchApplication.Закрепленное_жильеItem" />
+    <EntitySet Name="Паспортные_данные" EntityType="LightSwitchApplication.Паспортные_данныеItem" />
+    <EntitySet Name="Пенсия" EntityType="LightSwitchApplication.ПенсияItem" />
+    <EntitySet Name="Персональные_данные" EntityType="LightSwitchApplication.Персональные_данныеItem" />
+    <EntitySet Name="Поступление_в_приют" EntityType="LightSwitchApplication.Поступление_в_приютItem" />
+    <EntitySet Name="Регистрация_ребенка" EntityType="LightSwitchApplication.Регистрация_ребенкаItem" />
+    <EntitySet Name="Решение_Суда" EntityType="LightSwitchApplication.Решение_СудаItem" />
+    <EntitySet Name="Родители" EntityType="LightSwitchApplication.РодителиItem" />
+    <EntitySet Name="Свид_о_смерти" EntityType="LightSwitchApplication.Свид_о_смертиItem" />
+    <EntitySet Name="Тип_семьи" EntityType="LightSwitchApplication.Тип_семьиItem" />
+    <EntitySet Name="Улучшение_жилья" EntityType="LightSwitchApplication.Улучшение_жильяItem" />
+    <AssociationSet Name="Документы_ребенка_FK00" Association="LightSwitchApplication.Документы_ребенка_FK00">
+      <End Role="Персональные_данные" EntitySet="Персональные_данные" />
+      <End Role="Документы_ребенка" EntitySet="Документы_ребенка" />
+    </AssociationSet>
+    <AssociationSet Name="Жилье_ребенка_FK00" Association="LightSwitchApplication.Жилье_ребенка_FK00">
+      <End Role="Персональные_данные" EntitySet="Персональные_данные" />
+      <End Role="Жилье_ребенка" EntitySet="Жилье_ребенка" />
+    </AssociationSet>
+    <AssociationSet Name="Закрепленное_жилье_FK00" Association="LightSwitchApplication.Закрепленное_жилье_FK00">
+      <End Role="Персональные_данные" EntitySet="Персональные_данные" />
+      <End Role="Закрепленное_жилье" EntitySet="Закрепленное_жилье" />
+    </AssociationSet>
+    <AssociationSet Name="Паспортные_данные_FK00" Association="LightSwitchApplication.Паспортные_данные_FK00">
+      <End Role="Персональные_данные" EntitySet="Персональные_данные" />
+      <End Role="Паспортные_данные" EntitySet="Паспортные_данные" />
+    </AssociationSet>
+    <AssociationSet Name="Пенсия_FK00" Association="LightSwitchApplication.Пенсия_FK00">
+      <End Role="Персональные_данные" EntitySet="Персональные_данные" />
+      <End Role="Пенсия" EntitySet="Пенсия" />
+    </AssociationSet>
+    <AssociationSet Name="Поступление_в_приют_FK00" Association="LightSwitchApplication.Поступление_в_приют_FK00">
+      <End Role="Персональные_данные" EntitySet="Персональные_данные" />
+      <End Role="Поступление_в_приют" EntitySet="Поступление_в_приют" />
+    </AssociationSet>
+    <AssociationSet Name="Регистрация_ребенка_FK00" Association="LightSwitchApplication.Регистрация_ребенка_FK00">
+      <End Role="Персональные_данные" EntitySet="Персональные_данные" />
+      <End Role="Регистрация_ребенка" EntitySet="Регистрация_ребенка" />
+    </AssociationSet>
+    <AssociationSet Name="Родители_FK00" Association="LightSwitchApplication.Родители_FK00">
+      <End Role="Адрес" EntitySet="Адрес" />
+      <End Role="Родители" EntitySet="Родители" />
+    </AssociationSet>
+    <AssociationSet Name="Родители_FK01" Association="LightSwitchApplication.Родители_FK01">
+      <End Role="Свид_о_смерти" EntitySet="Свид_о_смерти" />
+      <End Role="Родители" EntitySet="Родители" />
+    </AssociationSet>
+    <AssociationSet Name="Тип_семьи_FK00" Association="LightSwitchApplication.Тип_семьи_FK00">
+      <End Role="Персональные_данные" EntitySet="Персональные_данные" />
+      <End Role="Тип_семьи" EntitySet="Тип_семьи" />
+    </AssociationSet>
+    <AssociationSet Name="Улучшение_жилья_FK00" Association="LightSwitchApplication.Улучшение_жилья_FK00">
+      <End Role="Персональные_данные" EntitySet="Персональные_данные" />
+      <End Role="Улучшение_жилья" EntitySet="Улучшение_жилья" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
